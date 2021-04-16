@@ -1,0 +1,17 @@
+name: Android CI
+
+on:
+  push:
+    branches: 
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Tar mods.d
+      run: |
+        cd andbible
+        tar cvfz mods.d.tar.gz mods.d
